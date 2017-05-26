@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset "utf-8"/>
+		<link rel="stylesheet" href="style.css" /
+<title></title>
+</head>
+<body>
+
+	<ul id="menu-demo2">
+	<li><a href="#">Espagne</a>
+		<ul>
+			<li><a href="churros.html">Churros</a></li>
+			<li><a href="La Paella.html">Paella</a></li>
+			<li><a href="Les Tortilla .html">Tortilla</a></li>
+		</ul>
+	</li>
+	<li><a href="#">France</a>
+		<ul>
+			<li><a href="foie gras france.html">Foie gras</a></li>
+			<li><a href="magret france.html">Magret de canard</a></li>
+			<li><a href="trtiflette.html">Tartiflette</a></li>
+		</ul>
+	</li>
+	<li><a href="#">Liban</a>
+		<ul>
+			<li><a href="tabouleh.html">Tabouleh</a></li>
+			<li><a href="Le Kebbeh.html">Kebbeh</a></li>
+			<li><a href="#">Chawarma</a></li>
+		</ul>
+	</li>
+	<li><a href="#">Naviguer</a>
+		<ul>
+			<li><a href="acceuil.html">Acceuil</a></li>
+			<li><a href="qcm.html">Le Qcm</a></li>
+			
+		</ul>
+	</li>
+</ul></br></br></br></br></br>
+
+
+
+
+<u>Question n°1:</u> Combien de temps faut-il pour cuir un magret au four ?<br/><br/>
+ 
+ 
+<form name="QCM">
+    <input type="radio" name="choix" value="choix0"/>Le magret de cuit pas au four<br/>
+    <input type="radio" name="choix" value="choix1"/> Entre 20 et 25 minutes<br/>
+    <input type="radio" name="choix" value="choix2"/> Entre 30 et 35 minutes<br/><br/><br/>
+    <div id="resultat"></div>
+ 
+ 
+<u>Question n°2:</u> Quel est l'ingredient principal de la tortilla ?<br/><br/>
+ 
+ 
+    <input type="radio" name="choix1" value="choix3"/> Les condiments<br/>
+    <input type="radio" name="choix1" value="choix4"/> La patate<br/>
+    <input type="radio" name="choix1" value="choix5"/> Les oeufs<br/><br/><br/>
+    <div id="resultat1"></div>
+ 
+ 
+<u>Question n°3:</u> Comment nomme-t-on l'ensemble de plusieurs plats libanais au cours d'un même repas ? <br/><br/>
+ 
+        <input type="radio" name="choix2" value="choix6"/>Le mezzé<br/>
+    <input type="radio" name="choix2" value="choix7"/> Le kebbeh<br/>
+    <input type="radio" name="choix2" value="choix8"/>le chawarma<br/><br/><br/>
+        <div id="resultat2"></div>
+ 
+<u>Question n°4:</u> De quelle ville est originaire la paella ?<br/><br/>
+ 
+        <input type="radio" name="choix3" value="choix9"/>De Cordou<br/>
+    <input type="radio" name="choix3" value="choix10"/> De Valance<br/>
+    <input type="radio" name="choix3" value="choix11"/> L'Andalousie<br/><br/><br/>
+        <div id="resultat3"></div>
+ 
+ 
+<u>Question n°5:</u>Quel fromage est utiliser pour la tartiflette ?<br/>
+ 
+        <input type="radio" name="choix4" value="choix12"/> Du kiri<br/>
+    <input type="radio" name="choix4" value="choix13"/> Du gruyère<br/>
+    <input type="radio" name="choix4" value="choix14"/> Du reblochon<br/><br/><br/>
+        <div id="resultat4"></div>
+ 
+<center><input type="button" value="Correction" onclick="tester(this.form)"/> <input type="reset" value="Effacer" /></center>
+</form>
+ 
+<br/>
+ 
+</div>
+ 
+ 
+<script type="text/javascript">
+ 
+function modifierText(id, texte) {
+    document.getElementById(id).innerHTML = texte;
+}
+ 
+function tester(f) {
+    var toutEstOk = true;
+ 
+    if (f.choix[1].checked) {
+        modifierText("resultat", "Bonne réponse: le magret met en effet 20 minutes pour cuir environ");
+ 
+    } else if (f.choix[0].checked || f.choix[2].checked) {
+        toutEstOk = false;
+        modifierText("resultat", "Mauvaise réponse: C'étais 20 à 25 minutes, Dommage !");
+ 
+    } else {
+        alert("Le QCM est mal rempli");
+        return false;
+    }
+ 
+    if (f.choix1[2].checked) {
+        modifierText("resultat1", "Bonne réponse: Il s'agissait bien des oeufs.");
+    } else if (f.choix1[0].checked || f.choix1[1].checked) {
+        toutEstOk = false;
+        modifierText("resultat1", "Mauvaise réponse: L'oeuf est le principal ingredients.");
+    } else {
+        alert("Le QCM est mal rempli");
+        return false;
+    }
+ 
+    if (f.choix2[0].checked) {
+        modifierText("resultat2", "Bonne réponse: Le mezzé est en effet la bonne réponse.");
+    } else if (f.choix2[1].checked || f.choix2[2].checked) {
+        toutEstOk = false;
+        modifierText("resultat2", "Mauvaise réponse: Le mezzé étais la bonne réponse.");
+    } else {
+        alert("Le QCM est mal rempli");
+        return false;
+    }
+     
+     
+    if (f.choix3[1].checked) {
+        modifierText("resultat3", "C'est bel et bien à Valence !");
+    } else if (f.choix3[0].checked || f.choix3[2].checked) {
+        toutEstOk = false;
+        modifierText("resultat3", "Mauvaise réponse: C'est à Valance de plus l'Andalousie est un état !");
+    } else {
+        alert("Le QCM est mal rempli");
+        return false;
+    }
+     
+    if (f.choix4[2].checked) {
+        modifierText("resultat4", "Bonne réponse:C'est bien du roblochon que l'on utilise !");
+    } else if (f.choix4[2].checked || f.choix4[1].checked) {
+        toutEstOk = false;
+        modifierText("resultat4", "Mauvaise réponse: Il s'agissait du roblochon dommage !");
+    } else {
+        alert("Le QCM est mal rempli");
+        return false;
+	}
+    if (toutEstOk) {
+        alert('Bravo ! Tout bon !');
+    } else {
+        alert('Aïe ! Il y a des erreurs...');
+    }
+    return false;
+}
+</script>
+</body>
+</html>
